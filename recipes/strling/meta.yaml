@@ -1,6 +1,6 @@
 {% set name = "strling" %}
-{% set version = "0.2.1" %}
-{% set sha256 = "74f7b7b3899bf97a47008c47e50b6298d929014b8da15d8d5d4dbd75f650f78b" %}
+{% set version = "0.4.0" %}
+{% set sha256 = "e563ada4fac72b8d64a6341bf433b02214088e5d89ad0d6c4117b2ec39611659" %}
 
 package:
   name: {{ name|lower }}
@@ -22,10 +22,21 @@ requirements:
     - htslib=1.10
   run:
     - htslib=1.10
+    - bpipe
+    - python
+    - scikit-learn
+    - seaborn
+    - pandas
+    - pysam
+    - biopython
+    - pytest
+    - statsmodels
+    - pytest-runner
 
 test:
   commands:
     - strling -h
+    - strling-outliers.py -h
 
 about:
   home: https://github.com/quinlan-lab/STRling
